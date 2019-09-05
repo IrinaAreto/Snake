@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj",
+    "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
     "projectName": "Objects",
-    "projectPath": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj",
-    "outputPath": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\obj\\",
+    "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
+    "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

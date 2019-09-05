@@ -2,6 +2,6 @@ namespace Objects
 {
     public class Apple
     {
-        public Coordinat _cors { get; set; }
+        public Coordinat Cors { get; set; }
     }
 }

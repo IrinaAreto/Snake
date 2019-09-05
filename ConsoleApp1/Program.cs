@@ -3,7 +3,7 @@ using Objects;
 
 namespace ConsoleApp1
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -11,8 +11,9 @@ namespace ConsoleApp1
 
             while (true)
             {
-                game.CheckPresssedKey();
+                game.CheckPressedKey();
             }
+            // ReSharper disable once FunctionNeverReturns
         }
     }
 }

@@ -36,9 +36,9 @@ namespace Objects
             _cors.RemoveAt(0);
         }
 
-        public void Grow(int x, int y)
+        public void Grow(Coordinat coor)
         {
-            _cors.Add(new Coordinat() {X = x, Y = y});
+            _cors.Add(coor);
         }
 
         public Coordinat GetOffset()

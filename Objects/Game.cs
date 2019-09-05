@@ -11,17 +11,19 @@ namespace Objects
         private readonly Timer _timer;
         private double lap = 500;
         private Direction _direction = Direction.Undefined;
+        private Field _field;
+        private int _speed;
 
         public Game()
         {
-            ConsoleSize();
+            _field = new Field(30, 70);
+            ConfigConsole();
             _snake = new Snake();
             _apple = new Apple();
             AppleCors();
             _timer = new Timer(lap);
             _timer.Elapsed += Lap;
             _timer.Enabled = true;
-            Console.CursorVisible = false;
             Render();
         }
 
@@ -34,16 +36,20 @@ namespace Objects
         {
             _snake.Move(_direction);
             Render();
-            if (Equals(_snake._cors.Last(), _apple._cors))
+            if (Equals(_snake._cors.Last(), _apple.Cors))
             {
                 Grow();
                 AppleCors();
                 ShowApple();
+                SetSpeed(++_speed);
             }
-            MoveToItself();
+            else
+            {
+                OnItself();
+            }
         }
 
-        public void CheckPresssedKey()
+        public void CheckPressedKey()
         {
             var key = Console.ReadKey(true);
             switch (key.Key)
@@ -79,32 +85,35 @@ namespace Objects
         public void ShowApple()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.CursorLeft = _apple._cors.X;
-            Console.CursorTop = _apple._cors.Y;
+            Console.CursorLeft = _apple.Cors.X;
+            Console.CursorTop = _apple.Cors.Y;
             Console.Write("@");
         }
 
         public void AppleCors()
         {
             var rand = new Random();
-            _apple._cors = new Coordinat() { X = rand.Next(0, 60), Y = rand.Next(0, 40) };
+            _apple.Cors = new Coordinat()
+                {Y = rand.Next(_field.Top, _field.Down), X = rand.Next(_field.Left, _field.Right)};
         }
 
         public void Grow()
         {
-            _snake.Grow(_apple._cors.X, _apple._cors.Y);
+            _snake.Grow(_apple.Cors);
         }
-        public void MoveToItself()
+
+        public void OnItself()
         {
-            foreach (var item in _snake._cors)
+            for (int i = 0; i < _snake._cors.Count - 1; i++)
             {
-                if (Equals(item, _snake._cors.Last()))
+                if (_snake._cors.Last().Equals(_snake._cors[i]))
                 {
                     _timer.Enabled = false;
                     GameOver();
                 }
             }
         }
+
         public void GameOver()
         {
             Console.Clear();
@@ -115,10 +124,25 @@ namespace Objects
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        public void ConsoleSize()
+
+        public void ConfigConsole()
         {
-            Console.SetWindowSize(70, 45);
-            Console.SetBufferSize(70, 45);
+            Console.CursorVisible = false;
+            Console.WindowHeight = _field.Height;
+            Console.WindowWidth = _field.Width;
+            Console.SetBufferSize(_field.Width, _field.Height);
+            Console.SetWindowSize(_field.Width, _field.Height);
         }
+
+        public void SetSpeed(int speed = 0)
+        {
+            _timer.Interval = GetDelay(speed);
+        }
+
+        private double GetDelay(int speed)
+        {
+            return  lap / speed;
+        }
+        
     }
 }

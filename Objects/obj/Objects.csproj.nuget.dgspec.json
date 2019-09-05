@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj": {}
+    "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj": {
+    "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj",
+        "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
         "projectName": "Objects",
-        "projectPath": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\Objects.csproj",
+        "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
         "packagesPath": "C:\\Users\\dolgo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dolgo\\RiderProjects\\snake\\Objects\\obj\\",
+        "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
