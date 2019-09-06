@@ -12,9 +12,9 @@ namespace Objects
         public Snake()
         {
             _cors = new List<Coordinat>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 8; i < 12; i++)
             {
-                _cors.Add(new Coordinat() {X = i, Y = 0});
+                _cors.Add(new Coordinat() {X = i, Y = 8});
             }
         }
 

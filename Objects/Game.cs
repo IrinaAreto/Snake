@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Timers;
 
 namespace Objects
@@ -12,7 +13,7 @@ namespace Objects
         private double lap = 500;
         private Direction _direction = Direction.Undefined;
         private Field _field;
-        private int _speed;
+        private int _speed = 5;
 
         public Game()
         {
@@ -21,12 +22,13 @@ namespace Objects
             _snake = new Snake();
             _apple = new Apple();
             AppleCors();
-            _timer = new Timer(lap);
+            _timer = new Timer();
+            SetSpeed(_speed);
             _timer.Elapsed += Lap;
             _timer.Enabled = true;
             Render();
+            ShowBorder();
         }
-
         ~Game()
         {
             _timer.Elapsed -= Lap;
@@ -34,7 +36,10 @@ namespace Objects
 
         private void Lap(object o, ElapsedEventArgs e)
         {
+            PrintSymbol(_snake._cors.First().X, _snake._cors.First().Y, ' ');
             _snake.Move(_direction);
+            CheckDead();
+            
             Render();
             if (Equals(_snake._cors.Last(), _apple.Cors))
             {
@@ -46,6 +51,16 @@ namespace Objects
             else
             {
                 OnItself();
+            }
+        }
+
+        private void CheckDead()
+        {
+            var head = _snake._cors.Last();
+            if (head.X == _field.Left || head.X == _field.Right ||
+                head.Y == _field.Top || head.Y == _field.Down)
+            {
+                GameOver();
             }
         }
 
@@ -71,7 +86,6 @@ namespace Objects
 
         public void Render()
         {
-            Console.Clear();
             ShowApple();
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var item in _snake._cors)
@@ -107,15 +121,13 @@ namespace Objects
             for (int i = 0; i < _snake._cors.Count - 1; i++)
             {
                 if (_snake._cors.Last().Equals(_snake._cors[i]))
-                {
-                    _timer.Enabled = false;
                     GameOver();
-                }
             }
         }
 
         public void GameOver()
         {
+            _timer.Enabled = false;
             Console.Clear();
             var message = "Game over!";
             Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
@@ -134,15 +146,37 @@ namespace Objects
             Console.SetWindowSize(_field.Width, _field.Height);
         }
 
-        public void SetSpeed(int speed = 0)
+        public void SetSpeed(int speed)
         {
             _timer.Interval = GetDelay(speed);
         }
 
         private double GetDelay(int speed)
         {
-            return  lap / speed;
+            return lap / speed * 2 + lap / 2;
         }
-        
+
+        private void PrintSymbol(int x, int y, char symbol, ConsoleColor background = ConsoleColor.Black, ConsoleColor font = ConsoleColor.White)
+        {
+            Console.CursorTop = y;
+            Console.CursorLeft = x;
+            Console.ForegroundColor = font;
+            Console.BackgroundColor = background;
+            Console.Write(symbol);
+        }
+
+        public void ShowBorder()
+        {
+            for (int i = 0; i < _field.Height-1; i++)
+            {
+                PrintSymbol(0, i, '|');
+                PrintSymbol(_field.Width-1, i, '|');
+            }
+            for (int i = 0; i < _field.Width-1; i++)
+            {
+                PrintSymbol(i, 0, '^');
+                PrintSymbol(i,_field.Height-1, '-');
+            }
+        }
     }
 }
