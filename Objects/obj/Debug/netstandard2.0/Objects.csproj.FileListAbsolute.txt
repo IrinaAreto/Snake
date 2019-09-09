@@ -10,7 +10,6 @@ C:\Users\dolgo\RiderProjects\snake\Objects\obj\Debug\netstandard2.0\Objects.pdb
 C:\Users\Алеша\source\repos\snake\Objects\bin\Debug\netstandard2.0\Objects.deps.json
 C:\Users\Алеша\source\repos\snake\Objects\bin\Debug\netstandard2.0\Objects.dll
 C:\Users\Алеша\source\repos\snake\Objects\bin\Debug\netstandard2.0\Objects.pdb
-C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.csprojAssemblyReference.cache
 C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.csproj.CoreCompileInputs.cache
 C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.AssemblyInfoInputs.cache
 C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.AssemblyInfo.cs
@@ -25,3 +24,4 @@ C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Object
 C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Objects.AssemblyInfo.cs
 C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Objects.dll
 C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Objects.pdb
+C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.csprojAssemblyReference.cache

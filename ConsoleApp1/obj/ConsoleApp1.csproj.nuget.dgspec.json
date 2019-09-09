@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\Алеша\\source\\repos\\snake\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Алеша\\source\\repos\\snake\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Алеша\\source\\repos\\snake\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\dolgo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\obj\\",
+        "projectPath": "C:\\Users\\Алеша\\source\\repos\\snake\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\Алеша\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Алеша\\source\\repos\\snake\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dolgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Алеша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj": {
-                "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj"
+              "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj": {
+                "projectPath": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj"
               }
             }
           }
@@ -60,20 +60,20 @@
         }
       }
     },
-    "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj": {
+    "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
+        "projectUniqueName": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj",
         "projectName": "Objects",
-        "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
-        "packagesPath": "C:\\Users\\dolgo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\obj\\",
+        "projectPath": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj",
+        "packagesPath": "C:\\Users\\Алеша\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dolgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Алеша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

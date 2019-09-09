@@ -14,6 +14,8 @@ namespace Objects
         private Direction _direction = Direction.Undefined;
         private Field _field;
         private int _speed = 5;
+        private int _score = 0;
+        private int _quantity = 1;
 
         public Game()
         {
@@ -21,13 +23,15 @@ namespace Objects
             ConfigConsole();
             _snake = new Snake();
             _apple = new Apple();
-            AppleCors();
+            _quantity = SetQuantity();
+            AppleCors(_quantity);
             _timer = new Timer();
             SetSpeed(_speed);
             _timer.Elapsed += Lap;
             _timer.Enabled = true;
             Render();
             ShowBorder();
+            ShowScore();
         }
         ~Game()
         {
@@ -39,26 +43,41 @@ namespace Objects
             PrintSymbol(_snake._cors.First().X, _snake._cors.First().Y, ' ');
             _snake.Move(_direction);
             CheckDead();
-            
+
             Render();
-            if (Equals(_snake._cors.Last(), _apple.Cors))
+            if (_apple._apples.Count == 0)
             {
-                Grow();
-                AppleCors();
+                _quantity = SetQuantity();
+                AppleCors(_quantity);
                 ShowApple();
-                SetSpeed(++_speed);
             }
             else
             {
-                OnItself();
+                foreach (var item in _apple._apples)
+                {
+                    if (_snake._cors.Last().Equals(item))
+                    {
+                        _snake.Grow(item);
+                        RemuveApple(item);
+                        SetSpeed(++_speed);
+                        _score++;
+                        ShowScore();
+                        Win();
+                        return;
+                    }
+                    else
+                    {
+                        OnItself();
+                    }
+                }
             }
         }
 
         private void CheckDead()
         {
             var head = _snake._cors.Last();
-            if (head.X == _field.Left || head.X == _field.Right ||
-                head.Y == _field.Top || head.Y == _field.Down)
+            if (head.X == _field.Left || head.X == _field.Right - 1 ||
+                head.Y == _field.Top || head.Y == _field.Down - 3)
             {
                 GameOver();
             }
@@ -87,7 +106,7 @@ namespace Objects
         public void Render()
         {
             ShowApple();
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Green;
             foreach (var item in _snake._cors)
             {
                 Console.CursorLeft = item.X;
@@ -96,24 +115,36 @@ namespace Objects
             }
         }
 
-        public void ShowApple()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.CursorLeft = _apple.Cors.X;
-            Console.CursorTop = _apple.Cors.Y;
-            Console.Write("@");
-        }
-
-        public void AppleCors()
+        public int SetQuantity()
         {
             var rand = new Random();
-            _apple.Cors = new Coordinat()
-                {Y = rand.Next(_field.Top, _field.Down), X = rand.Next(_field.Left, _field.Right)};
+            return rand.Next(1, 4);
         }
 
-        public void Grow()
+        public void ShowApple()
         {
-            _snake.Grow(_apple.Cors);
+            foreach (var item in _apple._apples)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.CursorLeft = item.X;
+                Console.CursorTop = item.Y;
+                Console.Write("@");
+            }
+        }
+
+        public void AppleCors(int quantity)
+        {
+            var rand = new Random();
+            for (int i = 0; i < quantity; i++)
+            {
+                _apple._apples.Add(new Coordinat()
+                { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
+            }
+        }
+
+        public void RemuveApple(Coordinat coordinat)
+        {
+            _apple._apples.Remove(coordinat);
         }
 
         public void OnItself()
@@ -167,15 +198,46 @@ namespace Objects
 
         public void ShowBorder()
         {
-            for (int i = 0; i < _field.Height-1; i++)
+            for (int i = 0; i < _field.Height - 1; i++)
             {
-                PrintSymbol(0, i, '|');
-                PrintSymbol(_field.Width-1, i, '|');
+                PrintSymbol(0, i, '/');
+                PrintSymbol(_field.Width - 1, i, '/');
             }
-            for (int i = 0; i < _field.Width-1; i++)
+            for (int i = 0; i < _field.Width - 1; i++)
             {
                 PrintSymbol(i, 0, '^');
-                PrintSymbol(i,_field.Height-1, '-');
+                PrintSymbol(i, _field.Height - 3, '.');
+            }
+        }
+
+        public void ShowScore()
+        {
+            Console.CursorTop = _field.Height - 2;
+            Console.CursorLeft = _field.Width - 12;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Score: " + _score);
+        }
+
+        public void Win()
+        {
+            if (_score == 25)
+            {
+                _timer.Enabled = false;
+                Console.Clear();
+                var message = "YOU WIN!";
+                Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
+                Console.CursorTop = 10;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(message);
+            }
+        }
+
+        public void ChooseSpeed(int speed)
+        {
+            var key = Console.ReadKey(true);
+            if (key.Key == ConsoleKey.Add)
+            {
+                SetSpeed(++speed);
             }
         }
     }
