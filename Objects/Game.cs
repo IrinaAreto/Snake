@@ -43,6 +43,7 @@ namespace Objects
             PrintSymbol(_snake._cors.First().X, _snake._cors.First().Y, ' ');
             _snake.Move(_direction);
             CheckDead();
+            CheckPoisonApple();
 
             Render();
             if (_apple._apples.Count == 0)
@@ -63,6 +64,8 @@ namespace Objects
                         _score++;
                         ShowScore();
                         Win();
+                        PoisonAppleCors();
+                        ShowPoisonApple();
                         return;
                     }
                     else
@@ -80,6 +83,17 @@ namespace Objects
                 head.Y == _field.Top || head.Y == _field.Down - 3)
             {
                 GameOver();
+            }
+        }
+
+        private void CheckPoisonApple()
+        {
+            foreach (var item in _apple._poisonApples)
+            {
+                if (_snake._cors.Last().Equals(item))
+                {
+                    GameOver();
+                }
             }
         }
 
@@ -147,6 +161,24 @@ namespace Objects
             _apple._apples.Remove(coordinat);
         }
 
+        public void PoisonAppleCors()
+        {
+            var rand = new Random();
+            _apple._poisonApples.Add(new Coordinat()
+            { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
+        }
+
+        public void ShowPoisonApple()
+        {
+            foreach(var item in _apple._poisonApples)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.CursorLeft = item.X;
+                Console.CursorTop = item.Y;
+                Console.Write("¸");
+            }
+        }
+
         public void OnItself()
         {
             for (int i = 0; i < _snake._cors.Count - 1; i++)
@@ -206,7 +238,7 @@ namespace Objects
             for (int i = 0; i < _field.Width - 1; i++)
             {
                 PrintSymbol(i, 0, '^');
-                PrintSymbol(i, _field.Height - 3, '.');
+                PrintSymbol(i, _field.Height - 3, '*');
             }
         }
 
