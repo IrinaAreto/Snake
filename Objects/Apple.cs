@@ -1,16 +1,24 @@
-using System.Collections.Generic;
+using System;
 
 namespace Objects
 {
     public class Apple
     {
-        public Coordinat Cors { get; set; }
-        public List<Coordinat> _apples;
-        public List<Coordinat> _poisonApples;
-        public Apple()
+        public Coordinat Cors { get; private set; }
+        public AppleType Type { get; private set; }
+        public Apple(Coordinat cors, AppleType type)
         {
-            _apples = new List<Coordinat>();
-            _poisonApples = new List<Coordinat>();
+            Type = type;
+            Cors = cors;
         }
+    }
+
+    public enum AppleType
+    {
+        Undefined,
+        GrowSize,
+        SpeedUp,
+        SpeedDown,
+        Poison
     }
 }

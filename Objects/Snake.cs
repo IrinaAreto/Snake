@@ -6,15 +6,30 @@ namespace Objects
 {
     public class Snake
     {
-        public List<Coordinat> _cors;
+        private bool growing;
+        public Coordinat Head => Cors.Last();
+        public bool OnItself
+        {
+            get
+            {
+                for (int i = 0; i < Cors.Count - 1; i++)
+                {
+                    if (Head.Equals(Cors[i]))
+                        return true;
+                }
+                return false;
+            }
+        }
+
+        public List<Coordinat> Cors { get; private set; }
         private Direction _oldDirection = Direction.Right;
 
         public Snake()
         {
-            _cors = new List<Coordinat>();
+            Cors = new List<Coordinat>();
             for (int i = 8; i < 12; i++)
             {
-                _cors.Add(new Coordinat() {X = i, Y = 8});
+                Cors.Add(new Coordinat() {X = i, Y = 8});
             }
         }
 
@@ -26,19 +41,22 @@ namespace Objects
             }
 
             var offset = GetOffset();
-            var last = _cors.Last();
-            _cors.Add(new Coordinat()
+            var last = Cors.Last();
+            Cors.Add(new Coordinat()
             {
                 X = last.X + offset.X,
                 Y = last.Y + offset.Y
             });
 
-            _cors.RemoveAt(0);
+            if (growing)
+                growing = false;
+            else
+                Cors.RemoveAt(0);
         }
 
-        public void Grow(Coordinat coor)
+        public void Grow()
         {
-            _cors.Add(coor);
+            growing = true;
         }
 
         public Coordinat GetOffset()

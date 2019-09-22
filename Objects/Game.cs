@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Timers;
@@ -8,7 +9,7 @@ namespace Objects
     public class Game
     {
         private Snake _snake;
-        private Apple _apple;
+        private List<Apple> _apples;
         private readonly Timer _timer;
         private double lap = 500;
         private Direction _direction = Direction.Undefined;
@@ -22,9 +23,9 @@ namespace Objects
             _field = new Field(30, 70);
             ConfigConsole();
             _snake = new Snake();
-            _apple = new Apple();
-            _quantity = SetQuantity();
-            AppleCors(_quantity);
+            _apples = new List<Apple>();
+            _quantity = GetQuantity();
+            AddApple(_quantity);
             _timer = new Timer();
             SetSpeed(_speed);
             _timer.Elapsed += Lap;
@@ -33,6 +34,7 @@ namespace Objects
             ShowBorder();
             ShowScore();
         }
+
         ~Game()
         {
             _timer.Elapsed -= Lap;
@@ -40,60 +42,70 @@ namespace Objects
 
         private void Lap(object o, ElapsedEventArgs e)
         {
-            PrintSymbol(_snake._cors.First().X, _snake._cors.First().Y, ' ');
+            ClearSnakeTail();
             _snake.Move(_direction);
-            CheckDead();
-            CheckPoisonApple();
 
             Render();
-            if (_apple._apples.Count == 0)
-            {
-                _quantity = SetQuantity();
-                AppleCors(_quantity);
-                ShowApple();
-            }
-            else
-            {
-                foreach (var item in _apple._apples)
-                {
-                    if (_snake._cors.Last().Equals(item))
-                    {
-                        _snake.Grow(item);
-                        RemuveApple(item);
-                        SetSpeed(++_speed);
-                        _score++;
-                        ShowScore();
-                        Win();
-                        PoisonAppleCors();
-                        ShowPoisonApple();
-                        return;
-                    }
-                    else
-                    {
-                        OnItself();
-                    }
-                }
-            }
-        }
-
-        private void CheckDead()
-        {
-            var head = _snake._cors.Last();
-            if (head.X == _field.Left || head.X == _field.Right - 1 ||
-                head.Y == _field.Top || head.Y == _field.Down - 3)
+            OnApple();
+            
+            CheckBorder();
+            
+            if (_snake.OnItself)
             {
                 GameOver();
             }
         }
 
-        private void CheckPoisonApple()
+        private void OnApple()
         {
-            foreach (var item in _apple._poisonApples)
+            foreach (var item in _apples)
             {
-                if (_snake._cors.Last().Equals(item))
+                if (_snake.Head.Equals(item.Cors))
                 {
-                    GameOver();
+                    if (item.Type == AppleType.GrowSize)
+                    {
+                        if (++_score == 25)
+                        {
+                            Win();
+                        }
+
+                        ShowScore();
+
+                        RemoveApple(item.Cors);
+                        AddApple(1, AppleType.Poison);
+
+                        _snake.Grow();
+                        SetSpeed(++_speed);
+                        
+                        if (_apples.All(a => a.Type != AppleType.GrowSize))
+                        {
+                            _quantity = GetQuantity();
+                            AddApple(_quantity);
+                            ShowApple();
+                        }
+                    }
+                    else if (item.Type == AppleType.Poison)
+                    {
+                        GameOver();
+                    }
+
+                    return;
                 }
+            }
+        }
+
+        private void ClearSnakeTail()
+        {
+            PrintSymbol(_snake.Cors.First().X, _snake.Cors.First().Y, ' ');
+        }
+
+        private void CheckBorder()
+        {
+            var head = _snake.Cors.Last();
+            if (head.X == _field.Left || head.X == _field.Right - 1 ||
+                head.Y == _field.Top || head.Y == _field.Down - 3)
+            {
+                GameOver();
             }
         }
 
@@ -114,14 +126,20 @@ namespace Objects
                 case ConsoleKey.RightArrow:
                     _direction = Direction.Right;
                     break;
+                case ConsoleKey.Add:
+                    SetSpeed(++_speed);
+                    break;
+                case ConsoleKey.Subtract:
+                    SetSpeed(--_speed);
+                    break;
             }
         }
 
-        public void Render()
+        private void Render()
         {
             ShowApple();
             Console.ForegroundColor = ConsoleColor.Green;
-            foreach (var item in _snake._cors)
+            foreach (var item in _snake.Cors)
             {
                 Console.CursorLeft = item.X;
                 Console.CursorTop = item.Y;
@@ -129,66 +147,68 @@ namespace Objects
             }
         }
 
-        public int SetQuantity()
+        private int GetQuantity()
         {
             var rand = new Random();
             return rand.Next(1, 4);
         }
 
-        public void ShowApple()
+        private void ShowApple()
         {
-            foreach (var item in _apple._apples)
+            foreach (var item in _apples)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.CursorLeft = item.X;
-                Console.CursorTop = item.Y;
-                Console.Write("@");
+                var color = ConsoleColor.Green;
+                var backColor = ConsoleColor.Black;
+                var symbol = '@';
+
+                switch (item.Type)
+                {
+                    case AppleType.GrowSize:
+                        color = ConsoleColor.Green;
+                        backColor = ConsoleColor.DarkGreen;
+                        symbol = '@';
+                        break;
+                    case AppleType.SpeedUp:
+                        color = ConsoleColor.Yellow;
+                        backColor = ConsoleColor.Cyan;
+                        symbol = '$';
+                        break;
+                    case AppleType.SpeedDown:
+                        color = ConsoleColor.Cyan;
+                        backColor = ConsoleColor.Yellow;
+                        symbol = '$';
+                        break;
+                    case AppleType.Poison:
+                        color = ConsoleColor.Red;
+                        backColor = ConsoleColor.DarkRed;
+                        symbol = 'Ñ‘';
+                        break;
+                    default:
+                        color = ConsoleColor.Black;
+                        backColor = ConsoleColor.Black;
+                        symbol = ' ';
+                        break;
+                }
+
+                PrintSymbol(item.Cors, symbol, backColor,color);
             }
         }
 
-        public void AppleCors(int quantity)
+        private void AddApple(int quantity, AppleType type = AppleType.GrowSize)
         {
             var rand = new Random();
             for (int i = 0; i < quantity; i++)
             {
-                _apple._apples.Add(new Coordinat()
-                { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
+                _apples.Add(new Apple (new Coordinat() {Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1)}, type));
             }
         }
 
-        public void RemuveApple(Coordinat coordinat)
+        private void RemoveApple(Coordinat coordinat)
         {
-            _apple._apples.Remove(coordinat);
+            _apples.RemoveAll(a => a.Cors.Equals(coordinat));
         }
 
-        public void PoisonAppleCors()
-        {
-            var rand = new Random();
-            _apple._poisonApples.Add(new Coordinat()
-            { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
-        }
-
-        public void ShowPoisonApple()
-        {
-            foreach(var item in _apple._poisonApples)
-            {
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.CursorLeft = item.X;
-                Console.CursorTop = item.Y;
-                Console.Write("¸");
-            }
-        }
-
-        public void OnItself()
-        {
-            for (int i = 0; i < _snake._cors.Count - 1; i++)
-            {
-                if (_snake._cors.Last().Equals(_snake._cors[i]))
-                    GameOver();
-            }
-        }
-
-        public void GameOver()
+        private void GameOver()
         {
             _timer.Enabled = false;
             Console.Clear();
@@ -200,7 +220,7 @@ namespace Objects
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public void ConfigConsole()
+        private void ConfigConsole()
         {
             Console.CursorVisible = false;
             Console.WindowHeight = _field.Height;
@@ -209,7 +229,7 @@ namespace Objects
             Console.SetWindowSize(_field.Width, _field.Height);
         }
 
-        public void SetSpeed(int speed)
+        private void SetSpeed(int speed)
         {
             _timer.Interval = GetDelay(speed);
         }
@@ -219,22 +239,32 @@ namespace Objects
             return lap / speed * 2 + lap / 2;
         }
 
+        private void PrintSymbol(Coordinat coordinat, char symbol, ConsoleColor background = ConsoleColor.Black, ConsoleColor font = ConsoleColor.White) 
+            => PrintSymbol(coordinat.X, coordinat.Y, symbol, background, font);
+
         private void PrintSymbol(int x, int y, char symbol, ConsoleColor background = ConsoleColor.Black, ConsoleColor font = ConsoleColor.White)
         {
+            var originFontColor = Console.ForegroundColor;
+            var originBackgroundColor = Console.BackgroundColor;
+            
             Console.CursorTop = y;
             Console.CursorLeft = x;
             Console.ForegroundColor = font;
             Console.BackgroundColor = background;
             Console.Write(symbol);
+            
+            Console.ForegroundColor = originFontColor;
+            Console.BackgroundColor = originBackgroundColor;
         }
 
-        public void ShowBorder()
+        private void ShowBorder()
         {
             for (int i = 0; i < _field.Height - 1; i++)
             {
                 PrintSymbol(0, i, '/');
                 PrintSymbol(_field.Width - 1, i, '/');
             }
+
             for (int i = 0; i < _field.Width - 1; i++)
             {
                 PrintSymbol(i, 0, '^');
@@ -242,7 +272,7 @@ namespace Objects
             }
         }
 
-        public void ShowScore()
+        private void ShowScore()
         {
             Console.CursorTop = _field.Height - 2;
             Console.CursorLeft = _field.Width - 12;
@@ -250,27 +280,15 @@ namespace Objects
             Console.WriteLine("Score: " + _score);
         }
 
-        public void Win()
+        private void Win()
         {
-            if (_score == 25)
-            {
-                _timer.Enabled = false;
-                Console.Clear();
-                var message = "YOU WIN!";
-                Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
-                Console.CursorTop = 10;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(message);
-            }
-        }
-
-        public void ChooseSpeed(int speed)
-        {
-            var key = Console.ReadKey(true);
-            if (key.Key == ConsoleKey.Add)
-            {
-                SetSpeed(++speed);
-            }
+            _timer.Enabled = false;
+            Console.Clear();
+            var message = "YOU WIN!";
+            Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
+            Console.CursorTop = 10;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
         }
     }
 }
