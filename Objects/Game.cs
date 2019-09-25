@@ -120,7 +120,7 @@ namespace Objects
         public void Render()
         {
             ShowApple();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             foreach (var item in _snake._cors)
             {
                 Console.CursorLeft = item.X;
@@ -151,8 +151,14 @@ namespace Objects
             var rand = new Random();
             for (int i = 0; i < quantity; i++)
             {
-                _apple._apples.Add(new Coordinat()
-                { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
+                var coord = new Coordinat()
+                { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) };
+                foreach(var item in _snake._cors)
+                {
+                    if (coord.Equals(item))
+                        AppleCors(_quantity);
+                }
+                _apple._apples.Add(coord);
             }
         }
 
@@ -164,15 +170,21 @@ namespace Objects
         public void PoisonAppleCors()
         {
             var rand = new Random();
-            _apple._poisonApples.Add(new Coordinat()
-            { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) });
+            var coord = new Coordinat()
+            { Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1) };
+            foreach(var item in _snake._cors)
+            {
+                if (coord.Equals(item))
+                    PoisonAppleCors();
+            }
+            _apple._poisonApples.Add(coord);
         }
 
         public void ShowPoisonApple()
         {
             foreach(var item in _apple._poisonApples)
             {
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.CursorLeft = item.X;
                 Console.CursorTop = item.Y;
                 Console.Write("¸");
@@ -197,7 +209,6 @@ namespace Objects
             Console.CursorTop = 10;
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(message);
-            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public void ConfigConsole()
@@ -246,7 +257,7 @@ namespace Objects
         {
             Console.CursorTop = _field.Height - 2;
             Console.CursorLeft = _field.Width - 12;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Score: " + _score);
         }
 
