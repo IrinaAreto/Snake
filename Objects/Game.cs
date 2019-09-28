@@ -199,7 +199,14 @@ namespace Objects
             var rand = new Random();
             for (int i = 0; i < quantity; i++)
             {
-                _apples.Add(new Apple (new Coordinat() {Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1)}, type));
+                var coord = new Coordinat()
+                    {Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1)};
+                foreach(var item in _snake.Cors)
+                {
+                    if (coord.Equals(item))
+                        AddApple(_quantity);
+                }
+                _apples.Add(new Apple (coord, type));
             }
         }
 
