@@ -132,6 +132,32 @@ namespace Objects
                 case ConsoleKey.Subtract:
                     SetSpeed(--_speed);
                     break;
+                case ConsoleKey.Escape:
+                    Environment.Exit(0);
+                    break;
+                case ConsoleKey.Spacebar:
+                    PauseGame();
+                    break;
+            }
+        }
+
+        private void PauseGame()
+        {
+            if (_timer.Enabled == true)
+            {
+                _timer.Enabled = false;
+                Console.Clear();
+                var message = "Pause";
+                Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
+                Console.CursorTop = 10;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(message);
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            else if(_timer.Enabled==false)
+            {
+                Console.Clear();
+                _timer.Enabled = true;
             }
         }
 
