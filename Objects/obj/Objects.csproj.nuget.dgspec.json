@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj": {}
+    "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj": {
+    "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj",
+        "projectUniqueName": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj",
         "projectName": "Objects",
-        "projectPath": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\Objects.csproj",
-        "packagesPath": "C:\\Users\\Алеша\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Алеша\\source\\repos\\snake\\Objects\\obj\\",
+        "projectPath": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj",
+        "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Алеша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,7 +46,12 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true

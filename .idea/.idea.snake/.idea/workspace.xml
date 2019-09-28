@@ -24,27 +24,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d20af7c2-6501-4d93-a80d-c19f5239e25e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/ConsoleApp1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/ConsoleApp1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.runtimeconfig.dev.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/Objects.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/Apple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Apple.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/Snake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Snake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Coordinat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Coordinat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,23 +87,13 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Objects/Apple.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2DDBDA9-1E09-414A-801B-36BA566856C2/b5/6d7134e8/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Snake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Field.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Direction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Game.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B681A47F-B789-4724-BD08-CC0A0213E9B7/3b/9eafb882/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/b9/19c72696/ConsoleKeyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A09FDA32-A389-459B-8C93-21D2426B075C/91/dfed3d54/Timer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2DDBDA9-1E09-414A-801B-36BA566856C2/92/6f490c0a/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/d4/5ed5d735/ConsoleKey.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/e3/2d00e7b9/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Coordinat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Field.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Apple.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/60/61f82190/Console.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/bb/82c9f8ad/ConsolePal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Direction.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -97,12 +102,12 @@
         <option value="$PROJECT_DIR$/ClassLibrary1/Class1.cs" />
         <option value="$PROJECT_DIR$/Objects/Coordin.cs" />
         <option value="$PROJECT_DIR$/Objects/Coordinates.cs" />
-        <option value="$PROJECT_DIR$/Objects/Coordinat.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp1/Program.cs" />
         <option value="$PROJECT_DIR$/Objects/Field.cs" />
         <option value="$PROJECT_DIR$/Objects/Apple.cs" />
         <option value="$PROJECT_DIR$/Objects/Snake.cs" />
         <option value="$PROJECT_DIR$/Objects/Game.cs" />
+        <option value="$PROJECT_DIR$/Objects/Coordinat.cs" />
       </list>
     </option>
   </component>
@@ -130,9 +135,9 @@
   </component>
   <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2/ConsoleApp1.dll" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp2.1" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="1" />
       <option name="USE_MONO" value="0" />
@@ -142,7 +147,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.1" />
       <method v="2">
         <option name="Build" enabled="true" />
       </method>
@@ -162,6 +167,7 @@
       <workItem from="1567707404335" duration="8387000" />
       <workItem from="1567791820377" duration="7286000" />
       <workItem from="1569161206054" duration="12534000" />
+      <workItem from="1569664627209" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1567715049753</created>

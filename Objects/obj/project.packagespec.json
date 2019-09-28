@@ -1,14 +1,11 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
+    "projectUniqueName": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj",
     "projectName": "Objects",
-    "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj",
-    "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\obj\\",
+    "projectPath": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj",
+    "outputPath": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netstandard2.0"
     ],
@@ -38,7 +35,12 @@
         }
       },
       "imports": [
-        "net461"
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
       ],
       "assetTargetFallback": true,
       "warn": true

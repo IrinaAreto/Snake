@@ -21,5 +21,10 @@ namespace Objects
             
             return false;
         }
+
+        public override int GetHashCode()
+        {
+            return X + Y;
+        }
     }
 }

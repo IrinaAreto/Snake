@@ -25,3 +25,11 @@ C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Object
 C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Objects.dll
 C:\Users\dolgo\RiderProjects\Snake_irina\Objects\obj\Debug\netstandard2.0\Objects.pdb
 C:\Users\Алеша\source\repos\snake\Objects\obj\Debug\netstandard2.0\Objects.csprojAssemblyReference.cache
+C:\Users\irina\RiderProjects\Snake\Objects\bin\Debug\netstandard2.0\Objects.deps.json
+C:\Users\irina\RiderProjects\Snake\Objects\bin\Debug\netstandard2.0\Objects.dll
+C:\Users\irina\RiderProjects\Snake\Objects\bin\Debug\netstandard2.0\Objects.pdb
+C:\Users\irina\RiderProjects\Snake\Objects\obj\Debug\netstandard2.0\Objects.csprojAssemblyReference.cache
+C:\Users\irina\RiderProjects\Snake\Objects\obj\Debug\netstandard2.0\Objects.AssemblyInfoInputs.cache
+C:\Users\irina\RiderProjects\Snake\Objects\obj\Debug\netstandard2.0\Objects.AssemblyInfo.cs
+C:\Users\irina\RiderProjects\Snake\Objects\obj\Debug\netstandard2.0\Objects.dll
+C:\Users\irina\RiderProjects\Snake\Objects\obj\Debug\netstandard2.0\Objects.pdb

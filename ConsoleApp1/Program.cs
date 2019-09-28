@@ -1,5 +1,4 @@
-﻿using System;
-using Objects;
+﻿using Objects;
 
 namespace ConsoleApp1
 {
