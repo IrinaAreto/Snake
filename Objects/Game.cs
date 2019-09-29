@@ -8,12 +8,15 @@ namespace Objects
 {
     public class Game
     {
-        private Snake _snake;
+        private Snake _snake1;
+        private Snake _snake2;
         private List<Apple> _apples;
-        private readonly Timer _timer;
+        private readonly Timer _timer1;
+        private readonly Timer _timer2;
         private double lap = 500;
-        private Direction _direction = Direction.Undefined;
-        private Field _field;
+        private Direction _direction1 = Direction.Undefined;
+        private Direction _direction2 = Direction.Undefined;
+        private readonly Field _field;
         private int _speed = 5;
         private int _score = 0;
         private int _quantity = 1;
@@ -23,19 +26,23 @@ namespace Objects
         {
             _field = new Field(30, 70);
             ConfigConsole();
-            _timer = new Timer();
-            _timer.Elapsed += Lap;
+            _timer1 = new Timer();
+            _timer2 = new Timer();
+            _timer1.Elapsed += LapTimer1;
+            _timer2.Elapsed += LapTimer2;
             Init();
         }
 
         ~Game()
         {
-            _timer.Elapsed -= Lap;
+            _timer1.Elapsed -= LapTimer1;
+            _timer2.Elapsed -= LapTimer2;
         }
 
         private void Init()
         {
-            _snake = new Snake();
+            _snake1 = new Snake(4);
+            _snake2 = new Snake(20);
             _apples = new List<Apple>();
             _speed = 5;
             _score = 0;
@@ -44,37 +51,49 @@ namespace Objects
             _quantity = GetQuantity();
             AddApple(_quantity);
             SetSpeed(_speed);
-            _timer.Enabled = true;
-            Render();
+            _timer1.Enabled = true;
+            _timer2.Enabled = true;
+            Render(_snake1, ConsoleColor.Green);
+            Render(_snake2, ConsoleColor.Cyan);
             ShowBorder();
             ShowScore();
         }
 
-        private void Lap(object o, ElapsedEventArgs e)
+        private void LapTimer1(object o, ElapsedEventArgs e)
         {
-            ClearSnakeTail();
-            _snake.Move(_direction);
+            OnTimer(_snake1, _direction1,ConsoleColor.Green);
+        }
 
-            Render();
+        private void LapTimer2(object o, ElapsedEventArgs e)
+        {
+            OnTimer(_snake2, _direction2, ConsoleColor.Cyan);
+        }
+
+        private void OnTimer(Snake snake, Direction direction, ConsoleColor color)
+        {
+            ClearSnakeTail(snake);
+            snake.Move(direction);
+
+            Render(snake, color);
             OnApple();
 
             CheckBorder();
 
-            if (_snake.OnItself)
+            if (_snake1.OnItself || _snake2.OnItself)
             {
                 GameOver();
             }
         }
 
-        private void OnApple()
+        private void OnApple(Snake snake)
         {
             foreach (var item in _apples)
             {
-                if (_snake.Head.Equals(item.Cors))
+                if (snake.Head.Equals(item.Cors))
                 {
                     if (item.Type == AppleType.GrowSize)
                     {
-                        if (++_score == 25)
+                        if (++_score == 15)
                         {
                             Win();
                         }
@@ -84,7 +103,7 @@ namespace Objects
                         RemoveApple(item.Cors);
                         AddApple(1, AppleType.Poison);
 
-                        _snake.Grow();
+                        snake.Grow();
                         SetSpeed(++_speed);
 
                         if (_apples.All(a => a.Type != AppleType.GrowSize))
@@ -104,14 +123,14 @@ namespace Objects
             }
         }
 
-        private void ClearSnakeTail()
+        private void ClearSnakeTail(Snake snake)
         {
-            PrintSymbol(_snake.Cors.First().X, _snake.Cors.First().Y, ' ');
+            PrintSymbol(snake.Cors.First().X, snake.Cors.First().Y, ' ');
         }
 
         private void CheckBorder()
         {
-            var head = _snake.Cors.Last();
+            var head = _snake1.Cors.Last();
             if (head.X == _field.Left || head.X == _field.Right - 1 ||
                 head.Y == _field.Top || head.Y == _field.Down - 3)
             {
@@ -125,16 +144,28 @@ namespace Objects
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    _direction = Direction.Up;
+                    _direction1 = Direction.Up;
                     break;
                 case ConsoleKey.DownArrow:
-                    _direction = Direction.Down;
+                    _direction1 = Direction.Down;
                     break;
                 case ConsoleKey.LeftArrow:
-                    _direction = Direction.Left;
+                    _direction1 = Direction.Left;
                     break;
                 case ConsoleKey.RightArrow:
-                    _direction = Direction.Right;
+                    _direction1 = Direction.Right;
+                    break;
+                case ConsoleKey.W:
+                    _direction2 = Direction.Up;
+                    break;
+                case ConsoleKey.S:
+                    _direction2 = Direction.Down;
+                    break;
+                case ConsoleKey.A:
+                    _direction2 = Direction.Left;
+                    break;
+                case ConsoleKey.D:
+                    _direction2 = Direction.Right;
                     break;
                 case ConsoleKey.Add:
                     SetSpeed(++_speed);
@@ -159,9 +190,10 @@ namespace Objects
 
         private void PauseGame()
         {
-            if (_timer.Enabled)
+            if (_timer1.Enabled)
             {
-                _timer.Enabled = false;
+                _timer1.Enabled = false;
+                _timer2.Enabled = false;
                 Console.Clear();
                 var message = "  Pause  ";
                 Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
@@ -175,19 +207,21 @@ namespace Objects
                 if (!_gameOver)
                 {
                     Console.Clear();
-                    Lap(this, null);
+                    OnTimer(_snake1, _direction1, ConsoleColor.Green);
+                    OnTimer(_snake2, _direction2, ConsoleColor.Cyan);
                     ShowBorder();
                     ShowScore();
-                    _timer.Enabled = true;
+                    _timer1.Enabled = true;
+                    _timer2.Enabled = true;
                 }
             }
         }
 
-        private void Render()
+        private void Render(Snake snake, ConsoleColor color)
         {
             ShowApple();
-            Console.ForegroundColor = ConsoleColor.Green;
-            foreach (var item in _snake.Cors)
+            Console.ForegroundColor = color;
+            foreach (var item in snake.Cors)
             {
                 Console.CursorLeft = item.X;
                 Console.CursorTop = item.Y;
@@ -249,7 +283,7 @@ namespace Objects
             {
                 var cors = new Coordinat(_field);
 
-                while (_snake.OnSelf(cors))
+                while (_snake1.OnSelf(cors))
                 {
                     cors = new Coordinat(_field);
                 }
@@ -265,7 +299,7 @@ namespace Objects
 
         private void GameOver()
         {
-            _timer.Enabled = false;
+            _timer1.Enabled = false;
             Console.Clear();
             _gameOver = true;
             var message = "Game over!";
@@ -296,7 +330,8 @@ namespace Objects
 
         private void SetSpeed(int speed)
         {
-            _timer.Interval = GetDelay(speed);
+            _timer1.Interval = GetDelay(speed);
+            _timer2.Interval = GetDelay(speed);
         }
 
         private double GetDelay(int speed)
@@ -349,7 +384,7 @@ namespace Objects
 
         private void Win()
         {
-            _timer.Enabled = false;
+            _timer1.Enabled = false;
             Console.Clear();
             var message = "YOU WIN!";
             Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;

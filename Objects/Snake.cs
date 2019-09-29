@@ -36,10 +36,10 @@ namespace Objects
         public List<Coordinat> Cors { get; private set; }
         private Direction _oldDirection = Direction.Right;
 
-        public Snake()
+        public Snake(int startX)
         {
             Cors = new List<Coordinat>();
-            for (int i = 8; i < 12; i++)
+            for (int i = startX; i < startX + 4; i++)
             {
                 Cors.Add(new Coordinat() {X = i, Y = 8});
             }

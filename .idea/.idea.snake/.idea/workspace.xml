@@ -24,30 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d20af7c2-6501-4d93-a80d-c19f5239e25e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/Coordinat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Coordinat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/Snake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Snake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +54,11 @@
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -196,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569665030199</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="One-player game">
+      <created>1569767429256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569767429256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +217,8 @@
     <MESSAGE value="add gitignore" />
     <MESSAGE value="some more fixes" />
     <MESSAGE value="some fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fix" />
+    <MESSAGE value="One-player game" />
+    <option name="LAST_COMMIT_MESSAGE" value="One-player game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
