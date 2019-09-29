@@ -24,12 +24,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d20af7c2-6501-4d93-a80d-c19f5239e25e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.snake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Coordinat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Coordinat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/Snake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/Snake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/bin/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Debug/netstandard2.0/Objects.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/Objects.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Objects/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,14 +75,23 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Objects/Snake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Coordinat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Game.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Objects/Field.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Apple.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A3050E52-69E5-4EBE-944A-34469ACCF3D4/30/e52cae8e/Environment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ConsoleApp1/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2DDBDA9-1E09-414A-801B-36BA566856C2/b5/6d7134e8/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Snake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Field.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Objects/Direction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B681A47F-B789-4724-BD08-CC0A0213E9B7/3b/9eafb882/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp2.2/ConsoleApp1.AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/b9/19c72696/ConsoleKeyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A09FDA32-A389-459B-8C93-21D2426B075C/91/dfed3d54/Timer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2DDBDA9-1E09-414A-801B-36BA566856C2/92/6f490c0a/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/d4/5ed5d735/ConsoleKey.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/e3/2d00e7b9/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Objects/Coordinat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConsoleApp1/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/60/61f82190/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC1DB133-E97D-4A6F-BEC9-3D52351902CF/bb/82c9f8ad/ConsolePal.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -75,9 +102,9 @@
         <option value="$PROJECT_DIR$/Objects/Coordinates.cs" />
         <option value="$PROJECT_DIR$/Objects/Field.cs" />
         <option value="$PROJECT_DIR$/Objects/Apple.cs" />
-        <option value="$PROJECT_DIR$/Objects/Snake.cs" />
-        <option value="$PROJECT_DIR$/Objects/Coordinat.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp1/Program.cs" />
+        <option value="$PROJECT_DIR$/Objects/Coordinat.cs" />
+        <option value="$PROJECT_DIR$/Objects/Snake.cs" />
         <option value="$PROJECT_DIR$/Objects/Game.cs" />
       </list>
     </option>
@@ -90,6 +117,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunDashboard">

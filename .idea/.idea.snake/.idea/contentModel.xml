@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\irina\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\irina\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_snake.-1505879212.00" t="ExcludeRecursive" />
-    <e p="C:\Users\irina\RiderProjects\Snake" t="IncludeFlat">
+    <e p="C:\Users\dolgo\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\dolgo\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_snake.-961419906.00" t="ExcludeRecursive" />
+    <e p="C:\Users\dolgo\RiderProjects\Snake_irina" t="IncludeFlat">
       <e p="ConsoleApp1" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="ConsoleApp1.csproj" t="IncludeRecursive" />

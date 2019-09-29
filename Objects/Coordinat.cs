@@ -1,9 +1,20 @@
+using System;
+
 namespace Objects
 {
     public class Coordinat
     {
         public int X { get; set; }
         public int Y { get; set; }
+
+        public Coordinat() {}
+
+        public Coordinat(Field field)
+        {
+            var rand = new Random();
+            Y = rand.Next(field.Top + 1, field.Down - 3);
+            X = rand.Next(field.Left + 1, field.Right - 1);
+        }
         
         public override bool Equals(object obj)
         {

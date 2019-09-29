@@ -704,19 +704,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\irina\\.nuget\\packages\\": {}
+    "C:\\Users\\dolgo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\irina\\RiderProjects\\Snake\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\irina\\RiderProjects\\Snake\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\irina\\RiderProjects\\Snake\\ConsoleApp1\\obj\\",
+      "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\dolgo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dolgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -729,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj": {
-              "projectPath": "C:\\Users\\irina\\RiderProjects\\Snake\\Objects\\Objects.csproj"
+            "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj": {
+              "projectPath": "C:\\Users\\dolgo\\RiderProjects\\Snake_irina\\Objects\\Objects.csproj"
             }
           }
         }
@@ -752,12 +756,7 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
         "warn": true

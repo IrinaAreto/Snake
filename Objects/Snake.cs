@@ -6,8 +6,20 @@ namespace Objects
 {
     public class Snake
     {
-        private bool growing;
+        private bool _growing;
         public Coordinat Head => Cors.Last();
+
+        public bool OnSelf(Coordinat coors)
+        {
+            foreach(var item in Cors)
+            {
+                if (coors.Equals(item))
+                    return true;
+            }
+
+            return false;
+        }
+        
         public bool OnItself
         {
             get
@@ -35,7 +47,8 @@ namespace Objects
 
         public void Move(Direction direction = Direction.Undefined)
         {
-            if (direction != Direction.Undefined)
+            if (direction != Direction.Undefined &&
+                !IsDirectionReverse(direction))
             {
                 _oldDirection = direction;
             }
@@ -48,15 +61,15 @@ namespace Objects
                 Y = last.Y + offset.Y
             });
 
-            if (growing)
-                growing = false;
+            if (_growing)
+                _growing = false;
             else
                 Cors.RemoveAt(0);
         }
 
         public void Grow()
         {
-            growing = true;
+            _growing = true;
         }
 
         public Coordinat GetOffset()
@@ -80,6 +93,22 @@ namespace Objects
             }
 
             return cors;
+        }
+
+        private bool IsDirectionReverse(Direction direction)
+        {
+            if (_oldDirection == Direction.Left && direction == Direction.Right || _oldDirection == Direction.Right && direction == Direction.Left)
+            {
+                return true;
+            }
+            else if (_oldDirection == Direction.Up && direction == Direction.Down || _oldDirection == Direction.Down && direction == Direction.Up)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

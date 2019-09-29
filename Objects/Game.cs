@@ -17,27 +17,37 @@ namespace Objects
         private int _speed = 5;
         private int _score = 0;
         private int _quantity = 1;
+        private bool _gameOver = false;
 
         public Game()
         {
             _field = new Field(30, 70);
             ConfigConsole();
-            _snake = new Snake();
-            _apples = new List<Apple>();
-            _quantity = GetQuantity();
-            AddApple(_quantity);
             _timer = new Timer();
-            SetSpeed(_speed);
             _timer.Elapsed += Lap;
-            _timer.Enabled = true;
-            Render();
-            ShowBorder();
-            ShowScore();
+            Init();
         }
 
         ~Game()
         {
             _timer.Elapsed -= Lap;
+        }
+
+        private void Init()
+        {
+            _snake = new Snake();
+            _apples = new List<Apple>();
+            _speed = 5;
+            _score = 0;
+            _quantity = 1;
+            _gameOver = false;
+            _quantity = GetQuantity();
+            AddApple(_quantity);
+            SetSpeed(_speed);
+            _timer.Enabled = true;
+            Render();
+            ShowBorder();
+            ShowScore();
         }
 
         private void Lap(object o, ElapsedEventArgs e)
@@ -47,9 +57,9 @@ namespace Objects
 
             Render();
             OnApple();
-            
+
             CheckBorder();
-            
+
             if (_snake.OnItself)
             {
                 GameOver();
@@ -76,7 +86,7 @@ namespace Objects
 
                         _snake.Grow();
                         SetSpeed(++_speed);
-                        
+
                         if (_apples.All(a => a.Type != AppleType.GrowSize))
                         {
                             _quantity = GetQuantity();
@@ -137,27 +147,39 @@ namespace Objects
                     break;
                 case ConsoleKey.Spacebar:
                     PauseGame();
+                    if (_gameOver)
+                    {
+                        Console.Clear();
+                        PlayAgain();
+                    }
+
                     break;
             }
         }
 
         private void PauseGame()
         {
-            if (_timer.Enabled == true)
+            if (_timer.Enabled)
             {
                 _timer.Enabled = false;
                 Console.Clear();
-                var message = "Pause";
+                var message = "  Pause  ";
                 Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
                 Console.CursorTop = 10;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(message);
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            else if(_timer.Enabled==false)
+            else
             {
-                Console.Clear();
-                _timer.Enabled = true;
+                if (!_gameOver)
+                {
+                    Console.Clear();
+                    Lap(this, null);
+                    ShowBorder();
+                    ShowScore();
+                    _timer.Enabled = true;
+                }
             }
         }
 
@@ -216,7 +238,7 @@ namespace Objects
                         break;
                 }
 
-                PrintSymbol(item.Cors, symbol, backColor,color);
+                PrintSymbol(item.Cors, symbol, backColor, color);
             }
         }
 
@@ -225,14 +247,14 @@ namespace Objects
             var rand = new Random();
             for (int i = 0; i < quantity; i++)
             {
-                var coord = new Coordinat()
-                    {Y = rand.Next(_field.Top + 1, _field.Down - 3), X = rand.Next(_field.Left + 1, _field.Right - 1)};
-                foreach(var item in _snake.Cors)
+                var cors = new Coordinat(_field);
+
+                while (_snake.OnSelf(cors))
                 {
-                    if (coord.Equals(item))
-                        AddApple(_quantity);
+                    cors = new Coordinat(_field);
                 }
-                _apples.Add(new Apple (coord, type));
+
+                _apples.Add(new Apple(cors, type));
             }
         }
 
@@ -245,12 +267,22 @@ namespace Objects
         {
             _timer.Enabled = false;
             Console.Clear();
+            _gameOver = true;
             var message = "Game over!";
+            var message2 = "To play again press space-key";
             Console.CursorLeft = (Console.BufferWidth - message.ToString().Length) / 2;
             Console.CursorTop = 10;
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
+            Console.CursorLeft = (Console.BufferWidth - message2.ToString().Length) / 2;
+            Console.CursorTop = 14;
+            Console.WriteLine(message2);
+        }
+
+        private void PlayAgain()
+        {
+            Init();
         }
 
         private void ConfigConsole()
@@ -272,20 +304,22 @@ namespace Objects
             return lap / speed * 2 + lap / 2;
         }
 
-        private void PrintSymbol(Coordinat coordinat, char symbol, ConsoleColor background = ConsoleColor.Black, ConsoleColor font = ConsoleColor.White) 
+        private void PrintSymbol(Coordinat coordinat, char symbol, ConsoleColor background = ConsoleColor.Black,
+            ConsoleColor font = ConsoleColor.White)
             => PrintSymbol(coordinat.X, coordinat.Y, symbol, background, font);
 
-        private void PrintSymbol(int x, int y, char symbol, ConsoleColor background = ConsoleColor.Black, ConsoleColor font = ConsoleColor.White)
+        private void PrintSymbol(int x, int y, char symbol, ConsoleColor background = ConsoleColor.Black,
+            ConsoleColor font = ConsoleColor.White)
         {
             var originFontColor = Console.ForegroundColor;
             var originBackgroundColor = Console.BackgroundColor;
-            
+
             Console.CursorTop = y;
             Console.CursorLeft = x;
             Console.ForegroundColor = font;
             Console.BackgroundColor = background;
             Console.Write(symbol);
-            
+
             Console.ForegroundColor = originFontColor;
             Console.BackgroundColor = originBackgroundColor;
         }
